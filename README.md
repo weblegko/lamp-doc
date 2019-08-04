@@ -11,14 +11,14 @@ sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-availab
 Редактируем:  
 sudo nano /etc/apache2/sites-available/example.com.conf  
   
-<VirtualHost *:80>  
+  <VirtualHost *:80>  
     ServerAdmin admin@example.com   
     ServerName example.com  
     ServerAlias www.example.com  
     DocumentRoot /var/www/example.com/public_html  
     ErrorLog ${APACHE_LOG_DIR}/error.log  
     CustomLog ${APACHE_LOG_DIR}/access.log combined  
-</VirtualHost>  
+  </VirtualHost>  
 
 Включение виртуального хоста:  
 sudo a2ensite example.com.conf  
