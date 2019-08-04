@@ -3,10 +3,10 @@ sudo chown -R $USER:$USER /var/www/example.com/public_html
 sudo chmod -R 755 /var/www
 nano /var/www/example.com/public_html/index.html
 
-Создаем файл виртуального хоста(копируем дефолтный и правим):
-sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/example.com.conf
-Редактируем:
-sudo nano /etc/apache2/sites-available/example.com.conf
+Создаем файл виртуального хоста(копируем дефолтный и правим):  
+sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/example.com.conf  
+Редактируем:  
+sudo nano /etc/apache2/sites-available/example.com.conf  
 
 ```apache
 <VirtualHost *:80>
@@ -19,10 +19,10 @@ sudo nano /etc/apache2/sites-available/example.com.conf
 </VirtualHost>
 ```
 
-Включение виртуального хоста:
-sudo a2ensite example.com.conf
+Включение виртуального хоста:  
+sudo a2ensite example.com.conf  
 
-Затем отключите стандартный виртуальный хост 000-default.conf:
+Затем отключите стандартный виртуальный хост 000-default.conf:  
 sudo a2dissite 000-default.conf
 
 Перезапустите Apache:
