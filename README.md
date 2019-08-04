@@ -1,35 +1,46 @@
-sudo mkdir -p /var/www/example.com/public_html
-sudo chown -R $USER:$USER /var/www/example.com/public_html
-sudo chmod -R 755 /var/www
-nano /var/www/example.com/public_html/index.html
+#Добавление нового домена в LAMP или создание виртуального хоста:
 
-Создаем файл виртуального хоста(копируем дефолтный и правим):  
+Создадим папку под домен:
+sudo mkdir -p /var/www/example.com/public_html  
+
+Наделим её нужными правами:  
+sudo chown -R $USER:$USER /var/www/example.com/public_html  
+
+Сделаем доступной папку:  
+sudo chmod -R 755 /var/www  
+
+Создадим файл для тестирования с каким нибудь контентом
+nano /var/www/example.com/public_html/index.html   
+  
+Создаем файл виртуального хоста апапча (копируем дефолтный и правим):  
 sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/example.com.conf  
 Редактируем:  
 sudo nano /etc/apache2/sites-available/example.com.conf  
-
-```apache
-<VirtualHost *:80>
-    ServerAdmin admin@example.com
-    ServerName example.com
-    ServerAlias www.example.com
-    DocumentRoot /var/www/example.com/public_html
-    ErrorLog ${APACHE_LOG_DIR}/error.log
-    CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
+  
+Добавим запись своего домена:  
+```apache  
+<VirtualHost *:80>  
+    ServerAdmin admin@example.com  
+    ServerName example.com  
+    ServerAlias www.example.com  
+    DocumentRoot /var/www/example.com/public_html  
+    ErrorLog ${APACHE_LOG_DIR}/error.log  
+    CustomLog ${APACHE_LOG_DIR}/access.log combined  
+</VirtualHost>  
 ```
-
-Включение виртуального хоста:  
+  
+Включаем виртуальныйо хост:  
 sudo a2ensite example.com.conf  
+  
+Отключить стандартный виртуальный хост 000-default.conf:  
+sudo a2dissite 000-default.conf  
 
-Затем отключите стандартный виртуальный хост 000-default.conf:  
-sudo a2dissite 000-default.conf
+Перезапустить Apache2:  
+sudo systemctl restart apache2  
 
-Перезапустите Apache:
-sudo systemctl restart apache2
-
-sudo nano /etc/hosts
-127.0.0.1   example.com
-
-Тестируем в браузере:
-http://example.com
+Редактировать hosts:  
+sudo nano /etc/hosts    
+127.0.0.1   example.com  
+  
+Тестируем новый домен:  
+http://example.com  
