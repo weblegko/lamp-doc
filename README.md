@@ -35,13 +35,11 @@
 
 Для запуска всех доступных виртуальных хостов:
 
-cd /etc/apache2/sites-available
-sudo a2ensite *
-sudo service apache2 reload
-
+*cd /etc/apache2/sites-available*
+*sudo a2ensite \* *
 
   
-Отключить стандартный виртуальный хост 000-default.conf:  
+Отключить, если нужно стандартный виртуальный хост 000-default.conf:  
 *sudo a2dissite 000-default.conf*  
 
 Перезапустить Apache2:  
