@@ -32,6 +32,14 @@
   
 Включаем виртуальныйо хост:  
 *sudo a2ensite example.com.conf*  
+
+Для запуска всех доступных виртуальных хостов:
+
+cd /etc/apache2/sites-available
+sudo a2ensite *
+sudo service apache2 reload
+
+
   
 Отключить стандартный виртуальный хост 000-default.conf:  
 *sudo a2dissite 000-default.conf*  
