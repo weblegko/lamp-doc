@@ -10,10 +10,12 @@
 *sudo service apache2 reload*  
 
 ### Создание пользователя для phpmyadmin
-*sudo mysql
-*> CREATE USER 'admin'@'localhost' IDENTIFIED BY 'пароль';*
-*> GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;*
-*> FLUSH PRIVILEGES;*
+  
+*sudo mysql  
+
+> CREATE USER 'admin'@'localhost' IDENTIFIED BY 'пароль';  
+> GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;  
+> FLUSH PRIVILEGES;  
 
 ## Добавление нового домена в LAMP - создание виртуального хоста
 
