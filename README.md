@@ -1,8 +1,28 @@
 ## Установка LAMP на Ubuntu 18.04
+[Ссылка на статью](https://losst.ru/ustanovka-lamp-ubuntu-18-04)
+
+*sudo apt install apache2*
+*sudo apt install mysql-server*
+*sudo apt install php7.2 libapache2-mod-php7.2 php-mysql*
+*sudo apt install php-curl php-json php-cgi php-gd php-zip php-mbstring php-xml php-xmlrpc*
+
+### Настройка брандмауэра
+
+*sudo ufw allow in 80/tcp*
+
+### Проверка работы LAMP
+
+*sudo nano /var/www/html/phpinfo.php*
+```
+<?php phpinfo(); ?>
+```
+Тестируем по ссылке [http://localhost/phpinfo.php](http://localhost/phpinfo.php)
 
 
 ## Установка phpmyadmin
-  
+[Ссылка на статью](https://losst.ru/ustanovka-phpmyadmin-ubuntu-18-04)
+ 
+ 
 *sudo apt install phpmyadmin*  
   
 *sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf*  
@@ -11,11 +31,12 @@
 
 ### Создание пользователя для phpmyadmin
   
-*sudo mysql  
-
+*sudo mysql*  
+```
 > CREATE USER 'admin'@'localhost' IDENTIFIED BY 'пароль';  
 > GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;  
 > FLUSH PRIVILEGES;  
+```
 
 ## Добавление нового домена в LAMP - создание виртуального хоста
 
