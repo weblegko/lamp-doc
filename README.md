@@ -6,10 +6,6 @@
 *sudo apt install php7.2 libapache2-mod-php7.2 php-mysql*  
 *sudo apt install php-curl php-json php-cgi php-gd php-zip php-mbstring php-xml php-xmlrpc*  
 
-### Настройка брандмауэра
-
-*sudo ufw allow in 80/tcp*
-
 ### Проверка работы LAMP
 
 *sudo nano /var/www/html/phpinfo.php*
