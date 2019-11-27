@@ -1,10 +1,10 @@
 ## Установка LAMP на Ubuntu 18.04
 [Ссылка на статью](https://losst.ru/ustanovka-lamp-ubuntu-18-04)
 
-*sudo apt install apache2*
-*sudo apt install mysql-server*
-*sudo apt install php7.2 libapache2-mod-php7.2 php-mysql*
-*sudo apt install php-curl php-json php-cgi php-gd php-zip php-mbstring php-xml php-xmlrpc*
+*sudo apt install apache2*  
+*sudo apt install mysql-server*  
+*sudo apt install php7.2 libapache2-mod-php7.2 php-mysql*  
+*sudo apt install php-curl php-json php-cgi php-gd php-zip php-mbstring php-xml php-xmlrpc*  
 
 ### Настройка брандмауэра
 
