@@ -1,12 +1,13 @@
 ## Установка LAMP на Ubuntu 18.04
 
+
 ## Установка phpmyadmin
-
-*sudo apt install phpmyadmin
-
-*sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
-*sudo a2enconf phpmyadmin
-*sudo service apache2 reload
+  
+*sudo apt install phpmyadmin*  
+  
+*sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf*  
+*sudo a2enconf phpmyadmin*  
+*sudo service apache2 reload*  
 
 ### Создание пользователя для phpmyadmin
 *sudo mysql
