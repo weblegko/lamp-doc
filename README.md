@@ -1,3 +1,19 @@
+## Установка LAMP на Ubuntu 18.04
+
+## Установка phpmyadmin
+
+*sudo apt install phpmyadmin
+
+*sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
+*sudo a2enconf phpmyadmin
+*sudo service apache2 reload
+
+### Создание пользователя для phpmyadmin
+*sudo mysql
+> CREATE USER 'admin'@'localhost' IDENTIFIED BY 'пароль';
+> GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
+> FLUSH PRIVILEGES;
+
 ## Добавление нового домена в LAMP - создание виртуального хоста
 
 Создадим папку под домен:  
