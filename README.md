@@ -62,9 +62,17 @@
     ServerAlias www.example.com  
     DocumentRoot /var/www/example.com/public_html  
     ErrorLog ${APACHE_LOG_DIR}/error.log  
-    CustomLog ${APACHE_LOG_DIR}/access.log combined  
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+    
+    <Directory /var/www/example.com/public_html>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+    </Directory>
+        
 </VirtualHost>  
 ```
+Включим mod_rewrite (для ЧПУ)
+$ sudo a2enmod rewrite
   
 Включаем виртуальныйо хост:  
 *sudo a2ensite example.com.conf*  
